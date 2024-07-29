@@ -49,8 +49,18 @@ jobs:
       run: pants --version
     - name: Check Pants config files
       run: pants tailor --check update-build-files --check '::'
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: go
+        build-mode: manual
     - name: Lint and compile
       run: pants lint check '::'
+      #run: pants lint check '::' --no-pantsd --no-local-cache
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:go"
     - name: Test
       run: pants test '::'
     - name: Package / Run
