@@ -55,8 +55,9 @@ jobs:
         languages: go
         build-mode: manual
     - name: Lint and compile
-      run: pants lint check '::'
-      #run: pants lint check '::' --no-pantsd --no-local-cache
+      # Exit code was 32 and last log line was: CodeQL detected code written in Go but this run didn't build any of it, or CodeQL could not process any of it.
+      # run: pants lint check '::'
+      run: pants lint check '::' --no-pantsd --no-local-cache
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
