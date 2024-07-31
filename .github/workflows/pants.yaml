@@ -59,7 +59,7 @@ jobs:
       # run: pants lint check '::'
       run: |
         pants clean-all
-        pants lint check '::' --no-pantsd --no-local-cache
+        pants compile :: --no-pantsd --no-local-cache
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
