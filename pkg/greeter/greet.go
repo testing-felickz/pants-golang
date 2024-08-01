@@ -4,11 +4,11 @@
 package greeter
 
 import (
-	"database/sql"
+	_ "database/sql" // Use blank identifier to avoid unused import error
 	"fmt"
 	"github.com/pantsbuild/example-golang/pkg/uuid"
-	"log"
-	"net/http"
+	_ "log"         // Use blank identifier to avoid unused import error
+	_ "net/http"    // Use blank identifier to avoid unused import error
 )
 
 // Hardcoded sensitive data example
