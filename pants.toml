@@ -4,6 +4,10 @@
 [GLOBAL]
 pants_version = "2.21.0"
 backend_packages = ["pants.backend.experimental.go"]
+pantsd = false
+local_cache = false
+watch_filesystem = false
+
 
 [anonymous-telemetry]
 enabled = true
@@ -11,3 +15,7 @@ repo_id = "AE018A26-213E-4B18-99A6-6923EC1E16DE"
 
 [golang]
 minimum_expected_version = "1.19"
+
+[process_execution]
+local_parallelism = 1
+use_sandbox = false
