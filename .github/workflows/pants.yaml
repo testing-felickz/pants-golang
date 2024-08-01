@@ -59,7 +59,7 @@ jobs:
       # run: pants lint check '::'
       #./pants clean-all not supported in v2
       run: |
-        pants check :: --no-pantsd --no-local-cache --no-watch-filesystem
+        pants check :: --no-pantsd --no-local-cache
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
