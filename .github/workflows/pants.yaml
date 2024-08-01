@@ -54,6 +54,7 @@ jobs:
       with:
         languages: go
         build-mode: manual
+        queries: ./.github/codeql/AllSuccessfullyExtractedFiles.ql
     - name: Lint and compile
       # Exit code was 32 and last log line was: CodeQL detected code written in Go but this run didn't build any of it, or CodeQL could not process any of it.
       # run: pants lint check '::'
